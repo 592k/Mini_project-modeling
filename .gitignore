@@ -1,1 +1,12 @@
 .DS_Store
+__pycache__/dataloader.cpython-38.pyc
+__pycache__/library.cpython-38.pyc
+__pycache__/main.cpython-38.pyc
+__pycache__/preprocess_V.cpython-38.pyc
+__pycache__/preprocess.cpython-38.pyc
+ieee-fraud-detection/sample_submission.csv
+ieee-fraud-detection/test_identity.csv
+ieee-fraud-detection/test_transaction.csv
+ieee-fraud-detection/train_identity.csv
+ieee-fraud-detection/train_transaction.csv
+preprocesses/__pycache__/preprocess_V.cpython-38.pyc
