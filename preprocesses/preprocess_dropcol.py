@@ -1,6 +1,6 @@
 import pandas as pd
 
-def dropcol(df_train):
+def dropcol(df_train, df_test):
 
     columns = ['id_07', 'id_08', 'id_21', 'id_22', 'id_23', 'id_24', 'id_25', 'id_26', 'id_27', 'id_33',
             'R_emaildomain', 
@@ -10,5 +10,6 @@ def dropcol(df_train):
 
     for column in columns:
         df_train.drop(columns=[column], inplace=True)
+        df_test.drop(columns=[column], inplace=True)
     
-    return df_train
+    return df_train, df_test
