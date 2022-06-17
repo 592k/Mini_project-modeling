@@ -3,7 +3,7 @@
 import pandas as pd
 import numpy as np
 
-def featurereduce():
+def featurereduce(df_train):
 
     # id_30 
     df_train.loc[df_train['id_30'].isin(['Windows 10',
@@ -384,3 +384,5 @@ def featurereduce():
                                         'outlook',
                                         'icloud',
                                         ]),'R_emaildomain'] = 'other'
+
+    return df_train
