@@ -1,11 +1,9 @@
-#%%
 import numpy as np
 import pandas as pd
 from sklearn import preprocessing
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import MinMaxScaler
 
-#%%
 def pre_V(X, test_merge):
     
     scaler = MinMaxScaler(feature_range=(0, 1))
