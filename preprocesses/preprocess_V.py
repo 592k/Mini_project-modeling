@@ -37,12 +37,5 @@ def pre_V(X, test_merge):
             pca = PCA(n_components=1)
             ratio =  pd.DataFrame(pca.fit_transform(Z), columns=[f'V{j}'],index = temp_index)
             test_merge2 = test_merge2.merge(ratio, how="left", on='TransactionID')
-
-    for f in X2.columns:
-        if X2[f].dtype=='object' or test_merge2[f].dtype=='object' : 
-            lbl = preprocessing.LabelEncoder()
-            lbl.fit(list(X2[f].values) + list(test_merge2[f].values))
-            X2[f] = lbl.transform(list(X2[f].values))
-            test_merge2[f] = lbl.transform(list(test_merge2[f].values))
             
     return(X2, test_merge2)

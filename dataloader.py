@@ -1,5 +1,5 @@
-#%%
 import pandas as pd
+
 
 def load_data():
     base = './ieee-fraud-detection/'
@@ -15,14 +15,14 @@ def load_data():
     train_merge = train_transaction.merge(train_identity, how='left', on='TransactionID')
     test_merge = test_transaction.merge(test_identity, how='left', on='TransactionID')
 
-    X = train_merge.drop(columns=['isFraud'], axis=1)
-    y = train_merge['isFraud'].copy()
-    del train_merge
+    # X = train_merge.drop(columns=['isFraud'], axis=1)
+    # y = train_merge['isFraud'].copy()
+    # del train_merge
     
-    return X, y, test_merge
+    return train_merge, test_merge
 
 def load_submission():
     base = './ieee-fraud-detection/'
     submission = pd.read_csv(base + 'sample_submission.csv',index_col='TransactionID')
     return submission
-# %%
+
