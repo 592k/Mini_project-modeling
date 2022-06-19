@@ -1,6 +1,6 @@
 import pandas as pd
 
-def pre_C(X):
+def preprocess_C(X):
 
     # C1, C9 이상치 제거    
     fenc1 = X['C1'].quantile(.75) + (3 * (X['C1'].quantile(.75) - X['C1'].quantile(.25)))

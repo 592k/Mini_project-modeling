@@ -39,4 +39,16 @@ def pre_V(X, test_merge):
     X2 = X2.drop(X2.iloc[:,-5:-3], axis=1)
     test_merge2 = test_merge2.drop(test_merge2.iloc[:,-5:-3], axis=1)
     
+
+    train_c = ['V89164', 'V168969', 'V279287']
+    test_c = ['V12081', 'V76854', 'V176518']
+    c = ['pca_V1', 'pca_V2', 'pca_V3']
+    #
+    for x, y in zip(train_c, c) :
+        X2.rename(columns={x:y}, inplace=True)
+
+    for x, y in zip(test_c, c) :
+        test_merge2.rename(columns={x:y}, inplace=True)   
+
+
     return(X2, test_merge2)

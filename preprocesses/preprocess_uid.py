@@ -8,9 +8,12 @@ def pre_uid(train, test):
 
 
     for df in [train, test]:
-        df['uid'] = df['D1_shift'].astype(str)+'_'+df['card1'].astype(str)+'_'+df['addr1'].astype(str)+'_'+df['ProductCD'].astype(str)
+        df['uid'] = df['D1_shift'].astype(str)+'_'+df['card1'].astype(str)+'_'+df['P_emaildomain'].astype(str)+df['addr1'].astype(str)+'_'+df['ProductCD'].astype(str)
 
-    encode_FE(train, test, ['uid'])
+    train, test = encode_FE(train, test, ['uid'])
+    test.drop('uid', axis=1)
+    train.drop('uid', axis=1)
+    return train, test
 
 
 def encode_FE(df1, df2, cols):
@@ -24,4 +27,4 @@ def encode_FE(df1, df2, cols):
         df2[nm] = df2[col].map(vc)
         df2[nm] = df2[nm].astype('float32')
         print(nm,', ',end='')
-
+    return df1, df2

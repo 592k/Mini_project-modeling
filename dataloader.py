@@ -21,6 +21,16 @@ def load_data():
     
     return train_merge, test_merge
 
+
+# def load_data():
+#     base = './ieee-fraud-detection/'
+#     train = pd.read_pickle(base + 'train.pkl')
+#     test = pd.read_pickle(base + 'test.pkl')
+
+
+#     return (train, test)
+
+
 def load_submission():
     base = './ieee-fraud-detection/'
     submission = pd.read_csv(base + 'sample_submission.csv',index_col='TransactionID')
