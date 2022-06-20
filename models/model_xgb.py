@@ -4,22 +4,12 @@ from sklearn.model_selection import GridSearchCV
 import xgboost as xgb
 from sklearn import preprocessing
 import pandas as pd
+from preprocess import *
 
-
-def encode_FE(df1, df2):
-    for col in df1.columns:
-        df = pd.concat([df1[col],df2[col]])
-        vc = df.value_counts(dropna=True, normalize=True).to_dict()
-        vc[-1] = -1
-        nm = col
-        df1[nm] = df1[col].map(vc)
-        df1[nm] = df1[nm].astype('float32')
-        df2[nm] = df2[col].map(vc)
-        df2[nm] = df2[nm].astype('float32')
-        print(nm,', ',end='')
-    return df1, df2
 
 def XGBoost(train, test, submission):
+
+    preprocessing()
 
     y_train = train['isFraud'].copy()
     # Drop target, fill in NaNs
