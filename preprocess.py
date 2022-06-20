@@ -37,7 +37,7 @@ def preprocessing():
     
     train_data, test_data = preprocess_V.pre_V(train_data, test_data)
     
-    train_data = preprocess_C.preprocess_C(train_data)
+    train_data = preprocess_C.pre_C(train_data)
     
     train_data, test_data = encode_FE(train_data, test_data)
 

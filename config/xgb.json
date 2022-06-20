@@ -1,0 +1,12 @@
+{
+    "params": {
+        "n_estimators" : 500,
+        "max_depth" : 9,
+        "learning_rate" : 0.05,
+        "subsample" : 0.9,
+        "colsample_bytree" : 0.9,
+        "missing" : -999,
+        "random_state" : 2019,
+        "min_samples_split": 2
+    }
+}
