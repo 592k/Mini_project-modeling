@@ -52,10 +52,5 @@ def preprocessing():
     return X, y, test_data
 
 
-#%%
-     
-#%%
-submission = load_submission()
-
 
 # %%
