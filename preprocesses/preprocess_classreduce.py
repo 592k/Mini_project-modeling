@@ -175,7 +175,7 @@ def classreduce(train, test):
 
 
         # R_emaildomain
-        df_train.R_emaildomain.loc[df_train.R_emaildomain.str.contains('gmail') == True] = 'gmail'
+        df_train['R_emaildomain'][df_train['R_emaildomain'].str.contains('gmail') == True] = 'gmail'
         df_train['R_emaildomain'][df_train['R_emaildomain'].str.contains('yahoo') == True] = 'yahoo'
         df_train['R_emaildomain'][df_train['R_emaildomain'].str.contains('outlook') == True] = 'outlook'
         df_train['R_emaildomain'][df_train['R_emaildomain'].str.contains('hotmail') == True] = 'outlook'
